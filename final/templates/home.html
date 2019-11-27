@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block conteudo %}
 {% load static %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+    </ul>
 <h1>Voce e o visitante</h1>
 {% endblock %}
