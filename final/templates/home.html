@@ -6,5 +6,10 @@
     <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
     {% endfor %}
     </ul>
-<h1>Voce e o visitante</h1>
+    {% if user.is_authenticated %}
+    <p class="logged-in-p">
+        Olá {{ user.username }} seja bem vindo, o que deseja fazer hoje? 
+        
+    </p>
+{% endif %}
 {% endblock %}
